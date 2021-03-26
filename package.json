@@ -1,0 +1,24 @@
+{
+  "name": "Quotely",
+  "version": "1.0.0",
+  "description": "Find  random quotes and save them for later.",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethan-kaseff/Quotely.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ethan-kaseff/Quotely/issues"
+  },
+  "homepage": "https://github.com/ethan-kaseff/Quotely#readme"
+}

@@ -1,21 +1,28 @@
-
+import getNewQuote from './http-request.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+    let quoteElement;
+    const savedList = document.getElementById('saved-quotes');
 
-    document.getElementById('quote-button').addEventListener('click', () => {
-        // Make HTTP Request
+    document.getElementById('new-quote').addEventListener('click', async () => {
 
-        // Format correctly 
-        
-        // Put on the page 
-
-
+        quoteElement = await getNewQuote();
+        document.getElementById('quote-text').innerHTML = quoteElement.html;
     })
 
-    document.getElementById('save-button').addEventListener('click', () => {
-        // Make sure I have new data  
+    document.getElementById('save-quote').addEventListener('click', () => {
+        // Make sure I have new data
+        localStorage.setItem(`Author: ${quoteElement.author}`, quoteElement.html);  
+        console.log(quoteElement);
 
         // Get data that might already be there
+        Object.keys(localStorage).forEach(function (key) {
+            if (key.includes('Author')) {
+                const newItem = document.createElement('li');
+                newItem.innerHTML = localStorage.getItem(key);
+                savedList.append(newItem);
+            }
+        });
 
         // Add to older object
 
